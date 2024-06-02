@@ -6,7 +6,8 @@ import { setPaymentLoading } from "../../slices/courseSlice"
 import { apiConnector } from "../apiconnector"
 import { studentEndpoints } from "../apis"
 import { loadStripe } from '@stripe/stripe-js';
-const stripePromise = loadStripe('pk_test_51PI0r5SJXEBwNpKVWsQlXRXakXqP4XPetTn8W9kORB4j2qLsLtQoff7ocRq87ALzAOAf4eCLKLGE9T7gq23dghc200ncEQVdMa');
+const PUBLISH_KEY = process.env.PUBLISH_KEY
+const stripePromise = loadStripe(PUBLISH_KEY);
 const {
   COURSE_PAYMENT_API,
   COURSE_VERIFY_API,

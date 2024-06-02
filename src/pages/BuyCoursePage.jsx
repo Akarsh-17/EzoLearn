@@ -6,7 +6,8 @@ import axios from 'axios';
 import { apiConnector } from '../services/apiconnector';
 import IconBtn from '../components/common/IconBtn'; // Adjust the import according to your project structure
 import swal from 'sweetalert2';
-const stripePromise = loadStripe('pk_test_51PI0r5SJXEBwNpKVWsQlXRXakXqP4XPetTn8W9kORB4j2qLsLtQoff7ocRq87ALzAOAf4eCLKLGE9T7gq23dghc200ncEQVdMa'); // Replace with your actual publishable key
+const PUBLISH_KEY = process.env.PUBLISH_KEY
+const stripePromise = loadStripe(PUBLISH_KEY); // Replace with your actual publishable key
 
 const PaymentPage = () => {
   const COURSE_PAYMENT_API ="http://localhost:4000/api/v1/payment/capturePayment"
