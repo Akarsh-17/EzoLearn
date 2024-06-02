@@ -6,7 +6,7 @@ import { setPaymentLoading } from "../../slices/courseSlice"
 import { apiConnector } from "../apiconnector"
 import { studentEndpoints } from "../apis"
 import { loadStripe } from '@stripe/stripe-js';
-const PUBLISH_KEY = process.env.PUBLISH_KEY
+const PUBLISH_KEY = (process.env.REACT_APP_PUBLISH_KEY)
 const stripePromise = loadStripe(PUBLISH_KEY);
 const {
   COURSE_PAYMENT_API,

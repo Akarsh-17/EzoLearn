@@ -6,7 +6,7 @@ import axios from 'axios';
 import { apiConnector } from '../services/apiconnector';
 import IconBtn from '../components/common/IconBtn'; // Adjust the import according to your project structure
 import swal from 'sweetalert2';
-const PUBLISH_KEY = process.env.PUBLISH_KEY
+const PUBLISH_KEY = (process.env.REACT_APP_PUBLISH_KEY)
 const stripePromise = loadStripe(PUBLISH_KEY); // Replace with your actual publishable key
 
 const PaymentPage = () => {
@@ -98,7 +98,7 @@ const PaymentPage = () => {
         text: "Payment not occur!",
         
       });
-      console.error('Payment failed:', error);
+      console.error('Payment failed12:', error);
     } else if (paymentIntent.status === 'succeeded') {
       try {
         const paymentId=paymentIntent.id

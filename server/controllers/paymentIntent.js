@@ -1,5 +1,6 @@
-const stripe = require('stripe')('sk_test_51PI0r5SJXEBwNpKVNPd5YoGDG4Emg2ZcLtPRNJ1zEXFTrU8HdxND7KSIDBx9cf38v5hwM1B5wFmwnScIJrxv30Ot00jxFUYbYp');
 
+require('dotenv').config();
+const stripe = require('stripe')(`${process.env.STRIPE_KEY}`);
 exports.createPaymentIntent = async (req, res) => {
   try {
     const { amount, currency } = req.body;

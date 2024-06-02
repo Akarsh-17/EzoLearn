@@ -10,7 +10,8 @@ const {
 const { paymentSuccessEmail } = require("../mail/templates/paymentSuccessEmail")
 const CourseProgress = require("../models/CourseProgress")
 require('dotenv').config();
-const stripe = require('stripe')(process.env.STRIPE_KEY);
+const stripe = require('stripe')(`${process.env.STRIPE_KEY}`);
+
 
 exports.capturePayment = async (req, res) => {
     let  courses  = req.body
